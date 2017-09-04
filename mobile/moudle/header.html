@@ -1,0 +1,17 @@
+<div class="header-box" ng-controller="header">
+	<div class="header">
+		<div class="logo">
+			<a href="./index.html">
+				<img src="img/logo.png" />
+			</a>
+		</div>
+		<div class="glyphicon glyphicon-list" ng-click="openList()"></div>
+	</div>
+	<div class="nav">
+		<ul>
+			<li ng-repeat="item in list" class="{{item.className}}" ng-click="choosePage(this)">{{item.name}}</li>
+			<div class="close glyphicon glyphicon-remove" ng-click="closeList()"></div>
+		</ul>
+	</div>
+	<div class="mask" ng-click="closeList()"></div>
+</div>

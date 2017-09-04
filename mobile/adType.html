@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="all">
+<link rel="shortcut icon" href="favicon.ico">
+<title>一传互动-广告类型-广告让您的生活更精彩</title>
+<meta name="description" content="植入,流量,广告投放,流量获利,简单,易操作,大平台" />
+<meta name="keywords" content="植入,流量,广告投放,流量获利,简单,易操作,大平台">
+<script src="js/common.js"></script>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="css/swiper-3.4.0.min.css">
+<link rel="stylesheet" href="layer/layui/css/layui.css">
+<link rel="stylesheet" href="css/index.css">
+<style type="text/css">
+.ng-cloak{display:none;}
+</style>
+</head>
+<body ng-cloak class="ng-cloak">
+
+<div class="wrap">
+	<!-- 头部 -->
+ 	<div ng-include="'moudle/header.html'"></div>
+	<!-- banner -->
+	<img src="img/banner/3.jpg" width="100%"/>
+	
+	<!-- part-1 -->
+	<div class="adType-part-1">
+		<div class="adType-part-1-box">
+			<div class="title">合作流程</div>
+			<img src="img/17.png" width="100%"/>
+		</div>
+	</div>
+	
+	<!-- part-2 -->
+	<div class="adType-part-2">
+		<div class="adType-part-2-box" ng--controller="adType-part-2">
+			<img src="img/18.png" width="60%"/>
+			<div class="content {{item.className2}}" ng-repeat="item in list" >
+				<div class="pic"></div>
+				<div class="dec">
+					<ul>
+						<li ng-repeat="item2 in item.title">
+							<span ng-repeat="item3 in item2">{{item3}}</span>
+						</li>
+						<li>
+							<ul class="result">
+								<li ng-repeat="item4 in item.score">
+									<div class="pic"></div>
+									<div>{{item4[0]}}</div>
+									<div class="score">{{item4[1]}}</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>	
+	
+	<!-- 联系我们 -->
+	<div ng-include="'moudle/contact.html'"></div>
+	<!-- 底部 -->
+	<div ng-include="'moudle/footer.html'"></div>
+	
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/angular-route.js"></script>
+<script src="js/swiper-3.4.0.min.js"></script>
+<script src="layer/layer.js"></script>
+<script src="layer/layui/layui.js"></script>
+<script src="js/KinerCode.js"></script>
+<script src="js/index.js"></script>
+<script>
+app.controller("adType-part-2", ['$scope',function($scope) {
+    $scope.list = [
+		{id:1,name:'餐饮',className:'layui-this',className2:'layui-show',
+		title:[
+			['投放诉求 : ','快速打开本地市场,让顾客持续来店消费达到拓客和锁客,提高餐饮品牌曝光率'],
+			['投放定位 : ','上海,江苏,杭州区域'],
+			['投放策略 : ','当地餐饮行业中打出广告高薪诚聘,赚取广告噱头,微信热门文章,微信群朋友圈进行推广回馈活动,通过微信文章分享红包形式,获取用户信息资料,用户关注完善信息,获取更精准的目标用户,使目标用户更准确,来店消费更具有针对性,吸引用户持续关注,让品牌与产品获得大众认可得到更好地推广.'],
+			['投放特点 : ','按CPC计费,确认目标客户,广告效果最大化.'],
+			['投放结果 : ','']
+		],
+		score:[
+			['广告覆盖率','40W+'],
+			['广告阅读量','10W+'],
+			['客户信息收集','1.5W+']
+		]}/*,
+		{id:2,name:'儿童乐园',className:'',className2:'',
+		title:[
+			['投放诉求 : ','提升品牌知名度和客户访问量,获取客户信息和用户咨询'],
+			['投放定位 : ','面向全国市场,喜欢儿童乐园的大众群体'],
+			['投放策略 : ','面向全国市场,喜欢儿童乐园的大众群体'],
+			['投放特点 : ','全国不同用户的任务领取和文章植入,提高自身品牌竞争力,吸引更多更大流量,是使品牌宣传力度最大化,将自身优势结合微信广告表现方式,是目标用户一目了然.'],
+			['投放结果 : ','按CPC计费,全国不限制传播,目标用户一网打尽']
+		],
+		score:[
+			['广告覆盖率','36W+'],
+			['广告阅读量','11W+'],
+			['客户信息收集','1.8W+']
+		]},
+		{id:3,name:'房地产',className:'',className2:'',
+		title:[
+			['投放诉求 : ','使用微信文章分享红包,使本地及周边地区宣传效力达到最大'],
+			['投放定位 : ','定点当地以及周边地区用户,吸引目标客户资源.'],
+			['投放策略 : ','使用趣味游戏,文章分享红包,增加用户的互动性和趣味性.使用户感官效果更强,形式更新颖.加强用户的记忆,吸引多用户自主转发,自主宣传.达到良好的广告效果'],
+			['投放特点 : ','按CPC计费,趣味游戏,新颖具有趣味性,广告效果更佳.'],
+			['投放结果 : ','']
+		],
+		score:[
+			['广告覆盖率','60W+'],
+			['广告阅读量','19W+'],
+			['客户信息收集','2.3W+']
+		]},
+		{id:4,name:'企业',className:'',className2:'',
+		title:[
+			['投放诉求 : ','提升品牌知名度,宣传产品,提升竞争力.'],
+			['投放定位 : ','面向全国市场,针对不同行业用户人群.'],
+			['投放策略 : ','全国不同用户的任务领取,提高自身企业品牌竞争力,吸引更多更大流量,使品牌宣传力度最大化,将自身优势结合热门文章,新闻形式表现,使目标用户一目了然.'],
+			['投放特点 : ','按CPC计费,全国不限制传播,品牌传播广告效果更佳.'],
+			['投放结果 : ','']
+		],
+		score:[
+			['广告覆盖率','90W+'],
+			['广告阅读量','25W+'],
+			['客户信息收集','2.8W+']
+		]},
+		{id:5,name:'汽车行业',className:'',className2:'',
+		title:[
+			['投放诉求 : ','提升品牌知名度,宣传新产品'],
+			['投放定位 : ','定点投放金融,IT,教育等高收入人群'],
+			['投放策略 : ','针对高收入人群的精准投放,通过一传互动红包任务和公众号进行广告分发,以微信平台推广广告场景,引导客户了解品牌,吸引购买以及加大品牌渗透力.'],
+			['投放特点 : ','按CPC计费,确认目标客户,广告效果最大化.'],
+			['投放结果 : ','']
+		],
+		score:[
+			['广告覆盖率','65W+'],
+			['广告阅读量','15W+'],
+			['客户信息收集','1.9W+']
+		]}*/
+	];
+	$scope.dec = [
+		{id:1,name:['投放诉求','投放定位','投放策略','投放特点','投放结果']}
+	];
+}]);
+//判断右侧滚动条位置
+$(document).ready(function(){
+    $(document).scroll(function(){
+        var top = $(document).scrollTop();
+        if(top > 700){
+			$('.layui-tab-item .dec').attr('class','dec dec-show');
+			$('.layui-tab-item .pic').attr('class','pic pic-show');
+		}
+		
+    });
+});
+
+//选项卡
+layui.use('element',function(){
+  var element = layui.element();
+});
+
+
+</script>
+</body>
+</html>
