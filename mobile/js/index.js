@@ -348,15 +348,21 @@ function moudleSilp(parents,child,name1){
 	var moveplace;
 	var lastplace = 0;
 	var allmovewidth;
+	var ulTop;
 	var nextplace = 0;
 	var flag;
 	$(parents).on('touchstart',function(event){
 		nextplace = event.originalEvent.targetTouches[0].pageY;
-		allmovewidth = 0;
+		if(!allmovewidth){
+			allmovewidth = 0;
+		}
+		ulTop = allmovewidth;
+		allmovewidth = ulTop;
 		$(child).css('transition-duration','0ms');
 	});
 	$(parents).on('touchmove',function(event){
 		moveplace = event.originalEvent.targetTouches[0].pageY;
+		ulTop = allmovewidth;
 		if(nextplace - moveplace >0){
 			allmovewidth = allmovewidth - Math.abs(nextplace - moveplace)/2;
 		}else{
@@ -368,14 +374,17 @@ function moudleSilp(parents,child,name1){
 	$(parents).on('touchend',function(event){
 		flag = document.getElementsByClassName(name1)[0].offsetHeight - document.getElementsByClassName(name1)[0].getElementsByTagName('ul')[0].offsetHeight;
 		if(flag > 0){
+			allmovewidth = 0;
 			$(child).css('transform','translate(0px, ' + 0 + 'px) translateZ(0px)');
 			$(child).css('transition-duration','600ms');
 			$(child).css('transition-timing-function','cubic-bezier(0.1, 0.57, 0.1, 1)');
 		}else if(allmovewidth > 0){
+			allmovewidth = 0;
 			$(child).css('transform','translate(0px, ' + 0 + 'px) translateZ(0px)');
 			$(child).css('transition-duration','600ms');
 			$(child).css('transition-timing-function','cubic-bezier(0.1, 0.57, 0.1, 1)');
 		}else if(allmovewidth < flag){
+			allmovewidth = flag;
 			$(child).css('transform','translate(0px, ' + flag + 'px) translateZ(0px)');
 			$(child).css('transition-duration','600ms');
 			$(child).css('transition-timing-function','cubic-bezier(0.1, 0.57, 0.1, 1)');
