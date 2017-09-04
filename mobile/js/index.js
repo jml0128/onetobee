@@ -128,7 +128,6 @@ $(document).ready(function(){
 
 
 
-
 var flag = 0; //判断验证码
 var flagYzm = 0; //判断是否获取短信验证码
 app.controller("user-state", ['$scope',function($scope) {
@@ -330,17 +329,59 @@ app.controller("header", ['$scope',function($scope) {
 		
 	}
 	$scope.openList =function(){
+		$(".nav,.mask").on('touchmove',function(event){
+			event.preventDefault();
+		}, false);
+		moudleSilp(".nav-box",".nav-box ul","nav-box");
 		$('.mask').css('display','block');
 		$('.nav').css('right','0');
-		$('body,html').css('overflow','hidden');
 	}
 	$scope.closeList =function(){
 		$('.mask').css('display','none');
 		$('.nav').css('right','-8.5rem');
-		$('body,html').css('overflow','auto');
 		
 	}
 }]);
+
+//组件滑动
+function moudleSilp(parents,child,name1){
+	var moveplace;
+	var lastplace = 0;
+	var allmovewidth;
+	var nextplace = 0;
+	var flag;
+	$(parents).on('touchstart',function(event){
+		nextplace = event.originalEvent.targetTouches[0].pageY;
+		allmovewidth = 0;
+		$(child).css('transition-duration','0ms');
+	});
+	$(parents).on('touchmove',function(event){
+		moveplace = event.originalEvent.targetTouches[0].pageY;
+		if(nextplace - moveplace >0){
+			allmovewidth = allmovewidth - Math.abs(nextplace - moveplace)/2;
+		}else{
+			allmovewidth = allmovewidth + Math.abs(nextplace - moveplace)/2;
+		}
+		nextplace = moveplace;
+		$(child).css('transform','translate(0px, ' + allmovewidth + 'px) translateZ(0px)');
+	});
+	$(parents).on('touchend',function(event){
+		flag = document.getElementsByClassName(name1)[0].offsetHeight - document.getElementsByClassName(name1)[0].getElementsByTagName('ul')[0].offsetHeight;
+		if(flag > 0){
+			$(child).css('transform','translate(0px, ' + 0 + 'px) translateZ(0px)');
+			$(child).css('transition-duration','600ms');
+			$(child).css('transition-timing-function','cubic-bezier(0.1, 0.57, 0.1, 1)');
+		}else if(allmovewidth > 0){
+			$(child).css('transform','translate(0px, ' + 0 + 'px) translateZ(0px)');
+			$(child).css('transition-duration','600ms');
+			$(child).css('transition-timing-function','cubic-bezier(0.1, 0.57, 0.1, 1)');
+		}else if(allmovewidth < flag){
+			$(child).css('transform','translate(0px, ' + flag + 'px) translateZ(0px)');
+			$(child).css('transition-duration','600ms');
+			$(child).css('transition-timing-function','cubic-bezier(0.1, 0.57, 0.1, 1)');
+		}
+	});
+}
 
 app.controller("companyList", ['$scope',function($scope) {
     $scope.list = [

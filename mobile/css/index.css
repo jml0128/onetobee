@@ -80,12 +80,11 @@ body{
 	z-index:4;
 	transition: all 0.4s cubic-bezier(0.4, 0, 0, 1);
 }
-.header-box .nav ul{
-	width:100%;
-	margin-top:1.5rem;
+.header-box .nav-box{
 	position:relative;
+	height:100%;
 }
-.header-box .nav ul .close{
+.header-box .nav-box .close{
 	font-size:0.6rem;
 	color:#333;
 	margin-right:0.5rem;
@@ -93,6 +92,10 @@ body{
 	right:0.5rem;
 	top:-1rem;
 	opacity:1;
+}
+.header-box .nav ul{
+	width:100%;
+	margin-top:1.5rem;
 }
 .header-box .nav ul li{
 	font-size:0.52rem;
