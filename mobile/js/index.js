@@ -332,12 +332,12 @@ app.controller("header", ['$scope',function($scope) {
 	$scope.openList =function(){
 		$('.mask').css('display','block');
 		$('.nav').css('right','0');
-		$('body').css('overflow','hidden');
+		$('body,html').css('overflow','hidden');
 	}
 	$scope.closeList =function(){
 		$('.mask').css('display','none');
 		$('.nav').css('right','-8.5rem');
-		$('body').css('overflow','auto');
+		$('body,html').css('overflow','auto');
 		
 	}
 }]);
