@@ -1,0 +1,81 @@
+
+<div class="navbar">
+	<div class="header">
+		<div class="header-info">
+			<div class="header-logo">
+				<img src="img/logo.png" />
+			</div>
+			<div class="header-slogan">营销平台</div>
+			<div class="user-state" ng--controller="user-state">
+				<div class="btn login"> 
+					<a href="http://ycdsp.baozoulaowang.com/ycadmm.php/">登陆</a>
+				</div>
+				<div class="btn register btn-primary" ng-click="register()">注册</div>
+			</div>
+		</div>
+	</div>
+	<!-- 导航栏 -->
+	<div class="nav">
+		<div class="nav-box">
+			<img class="pic" src="img/logo.png" width="150"></img>
+			<ul class="nav-list" ng-controller="header">
+				<li  ng-repeat="item in list" class="{{item.className}}" ng-click="choosePage(this)"><a href="javascript:void(0);">{{item.name}}</a></li>
+			</ul>
+			<div ng--controller="user-state" class="user-state min-user-state hidden">
+				<div class="btn login">
+					<a href="http://ycdsp.baozoulaowang.com/ycadmm.php/">登陆</a>
+				</div>
+				<div class="btn register btn-primary" ng-click="register()">注册</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="user-state-group login-box" ng--controller="user-state" >
+	<div>
+		<i class="glyphicon glyphicon-user"></i>
+		<input class="name" name="username" placeholder="用户名"/>
+	</div>
+	<div>
+		<i class="glyphicon glyphicon-lock"></i>
+		<input class="password" name="password" type="password" placeholder="密码"/>
+	</div>
+	<div>
+		<div id="slider2" class="slider"></div>
+	</div>
+	<div>
+		<button  class="btn btn-primary" ng-click="loginBtn()">登陆</button >
+		<button  class="btn btn-default" ng-click="closeAll()">取消</button >
+	</div>
+</div>
+
+<div class="user-state-group register-box" ng--controller="user-state" >
+	<div>
+		<i class="glyphicon glyphicon-user"></i>
+		<input class="register-name" name="username" placeholder="用户名"/>
+	</div>
+	<div>
+		<i class="glyphicon glyphicon-lock"></i>
+		<input class="register-password" name="password" type="password" placeholder="密码"/>
+	</div>
+	<div>
+		<i class="glyphicon glyphicon-lock"></i>
+		<input class="password-sub" name="password-sub" type="password" placeholder="确认密码"/>
+	</div>
+	<div>
+		<i class="glyphicon glyphicon-phone"></i>
+		<input class="phone" name="phone" type="num" placeholder="手机号码"/>
+	</div>
+	<div class="yzm-box">
+		<input name="yzm" type="text" placeholder="验证码"/>
+		<span class="get-yzm" ng-click="getYzm($event)">获取验证码</span>
+	</div>
+	<div>
+		<div id="slider3" class="slider"></div>
+	</div>
+	<div>
+		<button  class="btn btn-primary" ng-click="registerBtn()">注册</button >
+		<button  class="btn btn-default" ng-click="closeAll()">取消</button >
+	</div>
+	<div class="have" ng-click="have()">我有账号,去登陆</div>
+</div>

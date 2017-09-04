@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="all">
+<link rel="shortcut icon" href="favicon.ico">
+<title>一传互动-广告合作-广告让您的生活更精彩</title>
+<meta name="description" content="植入,流量,广告投放,流量获利,简单,易操作,大平台" />
+<meta name="keywords" content="植入,流量,广告投放,流量获利,简单,易操作,大平台">
+<script src="js/common.js"></script>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="css/swiper-3.4.0.min.css">
+<link rel="stylesheet" href="layer/layui/css/layui.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/banner.css">
+<style type="text/css">
+.ng-cloak{display:none;}
+</style>
+</head>
+<body ng-cloak class="ng-cloak">
+
+<div class="wrap">
+	<!-- 头部 -->
+ 	<div ng-include="'moudle/header.html'"></div>
+	<!-- banner图 -->
+	<div class="adCooperate-banner banner">
+		<div class="adCooperate-banner-background big-pic">
+		</div>
+	</div>
+	
+	<!-- part-1 -->
+	<div class="adCooperate-part-1 big-pic">
+		<div class="adCooperate-part-1-box">
+			<div class="title">投放流程</div>
+			<div class="pic"></div>
+			<div class="layui-tab  layui-tab-brief flow">
+				<ul class="layui-tab-title">
+					<li class="layui-this">
+						<div class="dec">注册用户</div>
+						<div class="pic"></div>
+					</li>
+					<li>
+						<div class="dec">资格认证</div>
+						<div class="pic"></div>
+					</li>
+					<li>
+						<div class="dec">资金充值</div>
+						<div class="pic"></div>
+					</li>
+					<li>
+						<div class="pic"></div>
+						<div class="dec">素材审核</div>
+					</li>
+					<li>
+						<div class="pic"></div>
+						<div class="dec">上线投放</div>
+					</li>
+					<li>
+						<div class="pic"></div>
+						<div class="dec">效果跟踪</div>
+					</li>
+				</ul>
+				<div class="layui-tab-content">
+					<div class="layui-tab-item layui-show">1</div>
+					<div class="layui-tab-item">2</div>
+					<div class="layui-tab-item">3</div>
+					<div class="layui-tab-item">4</div>
+					<div class="layui-tab-item">5</div>
+					<div class="layui-tab-item">6</div>
+				 </div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- part-2 -->
+	<div class="adCooperate-part-2">
+		<div class="adCooperate-part-2-box">
+			<div class="title">按效果计费，价格透明</div>
+			<div class="dec">相对于其他移动广告平台，单价低，性价比高，成本可控</div>
+			<div class="pic"></div>
+		</div>
+	</div>
+	
+	<!-- part-3 -->
+	<div class="adCooperate-part-3">
+		<div class="adCooperate-part-3-box">
+			<div class="title">解决方案</div>
+			<ul>
+				<li>
+					<div class="pic"></div>
+					<div class="cont">
+						<div class="icon"></div>
+						<div>
+							<div>·按CPC/CPA计费</div>
+							<div>·降低广告风险</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="pic"></div>
+					<div class="cont">
+						<div class="icon"></div>
+						<div>
+							<div>·数据处理</div>
+							<div>·过滤无效信息</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="pic"></div>
+					<div class="cont">
+						<div class="icon"></div>
+						<div>
+							<div>·技术对接</div>
+							<div>·满足客户要求</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- part-4 -->
+	<div class="adCooperate-part-4">
+		<div class="adCooperate-part-4-box">
+			<div class="title">一站式技术对接，为投放效果保驾护航</div>
+			<div class="dec">广告单次投放费用超过5万元，平台可无偿提供技术对接服务，方便沟通和后期的数据修改查询，保障更好的广告效果。</div>
+			<div class="pic">
+				<div class="pointer"></div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- part-5 -->
+	<div class="adCooperate-part-5 big-pic">
+		<div class="shadow">
+			<div class="adCooperate-part-5-box">
+				<div class="title">开启广告投放</div>
+				<div class="btn btn-default online-service">立即投放</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 联系我们 -->
+	<div ng-include="'moudle/contact.html'"></div>
+	<!-- 底部 -->
+	<div ng-include="'moudle/footer.html'"></div>
+	
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/angular-route.js"></script>
+<script src="js/swiper-3.4.0.min.js"></script>
+<script src="layer/layer.js"></script>
+<script src="layer/layui/layui.js"></script>
+<script src="js/KinerCode.js"></script>
+<script src="js/index.js"></script>
+<script>
+
+//选项卡
+layui.use('element',function(){
+  var element = layui.element();
+});
+</script>
+</body>
+</html>
