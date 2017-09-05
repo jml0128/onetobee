@@ -1,5 +1,4 @@
-
-//web端字体适配，动态改变字体大小
+// // //web端字体适配，动态改变字体大小
 function changeTextSize(){
 	var scale = 1 / devicePixelRatio;  
 	//设置遮罩层的高度
